@@ -219,5 +219,30 @@ public interface Player {
          * @param isAccelerate 开启：true 关闭：false
          */
         void onHWAccelerationToggle(boolean isAccelerate);
+
+        /**
+         * 播放下一个视频
+         */
+        void onPlayNext();
+
+        /**
+         * 控制层可见性改变
+         */
+        void onControllerViewChange(Boolean visible);
+
+        /**
+         * 播放状态改变
+         */
+        void onPlayStateChange(SuperPlayerDef.PlayerState state);
+
+        /**
+         * 播放器播放出错
+         */
+        void onError(int code, String message);
+
+        /**
+         * 播放器进度更新
+         */
+        void onProgressUpdate(long curSeconds, long totalSeconds);
     }
 }

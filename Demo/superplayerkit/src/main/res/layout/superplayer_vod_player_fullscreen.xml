@@ -80,6 +80,9 @@
         android:id="@+id/superplayer_ll_bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="77dp"
+        android:layout_marginRight="200dp"
+        android:gravity="center_horizontal"
         android:layout_alignParentBottom="true"
         android:background="@drawable/superplayer_bottom_shadow"
         android:orientation="horizontal">
@@ -90,7 +93,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="20dp"
             android:src="@drawable/superplayer_ic_vod_pause_normal" />
 
         <!--播放位置-->
@@ -98,25 +100,25 @@
             android:id="@+id/superplayer_tv_current"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:layout_gravity="center_vertical"
             android:text="00:00"
             android:textColor="@android:color/white"
-            android:textSize="11.0sp" />
+            android:textSize="14.0sp" />
 
         <com.tencent.liteav.demo.superplayer.ui.view.PointSeekBar
             android:id="@+id/superplayer_seekbar_progress"
-            android:layout_width="0.0dip"
+            android:layout_width="225dip"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="5.0dip"
-            android:layout_marginRight="5.0dip"
-            android:layout_weight="1.0"
-            app:psb_backgroundColor="@color/superplayer_biz_audio_progress_second"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            app:psb_backgroundColor="@color/mysuperplayer_progress_background_color"
             app:psb_max="100"
             app:psb_progress="0"
-            app:psb_progressColor="#FF584C"
-            app:psb_progressHeight="2dp"
-            app:psb_thumbBackground="@drawable/superplayer_ic_vod_thumb" />
+            app:psb_progressColor="@color/mysuperplayer_progress_color"
+            app:psb_progressHeight="6dp"
+            app:psb_thumbBackground="@drawable/mysuperplayer_ic_vod_thumb" />
 
         <!--总时长-->
         <TextView
@@ -126,7 +128,34 @@
             android:layout_gravity="center_vertical"
             android:text="00:00"
             android:textColor="@android:color/white"
-            android:textSize="11.0sp" />
+            android:textSize="14.0sp" />
+
+        <!--音量-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="30dp">
+
+<!--            <com.tencent.liteav.demo.superplayer.ui.view.VolumeSeekBar-->
+<!--                android:id="@+id/superplayer_volume_seekbar"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_gravity="center_horizontal"-->
+<!--                app:vsb_backgroundColor="@color/mysuperplayer_volumebar_background_color"-->
+<!--                app:vsb_max="100"-->
+<!--                app:vsb_progress="0"-->
+<!--                app:vsb_progressColor="@color/mysuperplayer_progress_color"-->
+<!--                app:vsb_progressWidth="6dp"-->
+<!--                app:vsb_thumbBackground="@drawable/mysuperplayer_ic_volume_thumb" />-->
+
+            <ImageView
+                android:id="@+id/superplayer_iv_volume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/mysuperplayer_ic_vod_volume_normal" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/superplayer_tv_quality"
@@ -182,20 +211,61 @@
         android:src="@drawable/superplayer_ic_player_unlock" />
 
     <LinearLayout
-        android:id="@+id/superplayer_ll_replay"
-        android:layout_width="wrap_content"
+        android:id="@+id/superplayer_complet_center"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="10dp"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="200dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
         android:visibility="gone">
 
-        <ImageView
-            android:id="@+id/superplayer_iv_replay"
+        <LinearLayout
+            android:id="@+id/superplayer_ll_replay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/superplayer_ic_replay" />
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/mysuperplayer_iv_replay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mysuperplayer_ic_replay" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textSize="15sp"
+                android:textColor="@color/superplayer_white"
+                android:text="@string/superplayer_replay" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/superplayer_ll_play_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginLeft="77dp"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/mysuperplayer_iv_play_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mysuperplayer_iv_play_next" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textSize="15sp"
+                android:textColor="@color/superplayer_white"
+                android:text="@string/superplayer_play_next" />
+        </LinearLayout>
 
     </LinearLayout>
 

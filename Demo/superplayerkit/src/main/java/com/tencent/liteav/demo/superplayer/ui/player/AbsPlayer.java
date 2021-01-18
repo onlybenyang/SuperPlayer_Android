@@ -26,6 +26,7 @@ public abstract class AbsPlayer extends RelativeLayout implements Player {
         @Override
         public void run() {
             hide();
+            mControllerCallback.onControllerViewChange(false);
         }
     };
 

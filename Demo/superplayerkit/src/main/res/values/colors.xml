@@ -24,4 +24,9 @@
 
     <color name="superplayer_default_progress_color">#FF4081</color>
     <color name="superplayer_default_progress_background_color">#BBBBBB</color>
+
+<!--自定义进度条颜色-->
+    <color name="mysuperplayer_progress_color">#2dc18c</color>
+    <color name="mysuperplayer_progress_background_color">#ffffff</color>
+    <color name="mysuperplayer_volumebar_background_color">#4d2dc18c</color>
 </resources>
